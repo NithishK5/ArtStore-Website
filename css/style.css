@@ -1,0 +1,22 @@
+.banner {
+    background-image: url("../img/banner.svg");
+    height: 60vh;
+    background-size: 50% 74%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin-top: 68px;
+}
+
+.product-image {
+    min-height: 195px;
+}
+
+.content-box {
+    width: 100%;
+    min-height: calc(100vh - 50px);
+}
+
+.footer {
+    height: 50px;
+}

@@ -8,7 +8,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $_SESSION['is_validated'] = false;
-//Header tamplate
+
 require_once "template/header.php";
 // content page it this case we put the product list in by the default
 ?>
@@ -19,7 +19,7 @@ require_once "template/header.php";
                     <h1 class="display-1">Cara Art</h1>
                 </div>
                 <div class="col-12 col-sm-12">
-                    <img src="assets/img/art.jpg" class="image-responsive image-cover" alt="cover">
+                    <img src="./assets/img/art.jpg" class="image-responsive image-cover" alt="cover">
                 </div>
                 <div class="col-12 col-sm-12">
                     <p class="mt-3 resume">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis expedita harum maxime

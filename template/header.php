@@ -15,7 +15,7 @@ $base_url="http://".$_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"].'?')
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Cara Art</title>
 </head>
 <body>
@@ -33,13 +33,19 @@ $base_url="http://".$_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"].'?')
                             <a class="nav-link" href="<?php echo($base_url); ?>">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo($base_url); ?>art_list.php">Art List</a>
+                            <a class="nav-link" href="<?php echo($base_url); ?>art_list.php?page=0">Art List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo($base_url); ?>appointment.php">Appointment</a>
                         </li>
                     </ul>
+                    <a  class="navbar-brand" href="<?php echo($base_url); ?>admin.php">Admin</a>
+
                 </div>
-                <a  class="navbar-brand" href="<?php echo($base_url); ?>admin.php">Admin</a>
             </nav>
         </div>
     </div>
 </div>
-<script src="assets/js/index.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>

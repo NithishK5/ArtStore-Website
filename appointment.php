@@ -7,12 +7,8 @@ error_reporting(E_ALL);
 require_once "template/header.php";
 require_once "functions.php";
 
-$id = $_GET['id'];
-$name = $_GET['name'];
-
 if (isset($_POST) && !empty($_POST)) {
-    setOrder($_POST);
-
+    setAppointment($_POST);
 }
 ?>
 
@@ -83,6 +79,8 @@ if (isset($_POST) && !empty($_POST)) {
 
 
         $(document).on('submit', '#formid', function (e) {
+
+
             if (jQuery("#formid").valid() == false) {
                 e.preventDefault();
                 $(".alert").hide();
@@ -102,11 +100,19 @@ if (isset($_POST) && !empty($_POST)) {
             <div class="col-12 col-sm-6 mt-3">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h4 class="card-title">Set order </h4>
-                        <p class="card-subtitle mb-2">
-                            ID: <?php echo $id; ?>
-                            Work art: <?php echo $name; ?>
-                        </p>
+                        <div class="alert alert-warning" role="alert">
+                            <strong>Warning!</strong> <span></span>.
+                            <button type="button" class="close" data-dismiss="alert" onclick="$('.alert').hide();">&times;
+                            </button>
+                        </div>
+
+                        <div class="alert alert-success" role="alert">
+                            <strong>Success!</strong> <span></span>.
+                            <button type="button" class="close" data-dismiss="alert" onclick="$('.alert').hide();">&times;
+                            </button>
+                        </div>
+
+                        <h4 class="card-title">Set appointment </h4>
                         <form method="post" id="formid" action="" role="form" name="data" class="form">
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
                             <div class="row justify-content-center">
@@ -115,13 +121,6 @@ if (isset($_POST) && !empty($_POST)) {
                                         <label class="control-label" for="name">Name</label>
                                         <input type="text" class="form-control" id="name" name="name"
                                                placeholder="name"/>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label" for="email">Email</label>
-                                        <input type="text" class="form-control" id="email" name="email"
-                                               placeholder="Email"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -136,6 +135,13 @@ if (isset($_POST) && !empty($_POST)) {
                                         <label class="control-label" for="phone">Phone Number</label>
                                         <input type="text" class="form-control" id="phone_number" name="phone_number"
                                                placeholder="Phone Number"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="date">Date time</label>
+                                        <input type="datetime-local" class="form-control" id="date" name="date"
+                                               placeholder="Date time"/>
                                     </div>
                                 </div>
                             </div>

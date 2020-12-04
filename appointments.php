@@ -15,13 +15,14 @@ require_once "functions.php";
 
 $base_url="http://".$_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"].'?').'/';
 
-$orders = getOrders();
+$appointments = getAppointments();
 $pass = "letMEin2020";
 $is_validated = $_SESSION['is_validated'];
 
 if (isset($_POST) && !empty($_POST)) {
     $_SESSION['is_validated'] = $pass == $_POST['password'];
 }
+
 
 ?>
 <?php
@@ -68,12 +69,12 @@ if(!$is_validated) {
                         <div class="card-body py-2">
                             <ul class="nav nav-pills nav-fill mb-3">
                                 <li class="nav-item">
-                                    <a class="nav-link active"
+                                    <a class="nav-link"
                                        href="<?php echo($base_url); ?>admin.php"
                                     >Orders</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link"
+                                    <a class="nav-link active"
                                        href="<?php echo($base_url); ?>appointments.php"
                                     >Appointments</a>
                                 </li>
@@ -83,20 +84,20 @@ if(!$is_validated) {
                                 <thead>
                                 <tr>
                                     <th hidden scope="col">id</th>
-                                    <th scope="col">Name</th>
                                     <th scope="col">Costumer</th>
+                                    <th scope="col">Date</th>
                                     <th scope="col">Phone number</th>
                                     <th scope="col">Postal Address</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                foreach ($orders as $row => $val)
+                                foreach ($appointments as $row => $val)
                                 {
                                     ?>
                                     <tr>
-                                        <td><?php echo $val['name1']; ?></td>
                                         <td><?php echo $val['name']; ?></td>
+                                        <td><?php echo $val['date']; ?></td>
                                         <td><?php echo $val['phone_number']; ?></td>
                                         <td><?php echo $val['postal_address']; ?></td>
                                     </tr>

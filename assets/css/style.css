@@ -1,0 +1,14 @@
+.image-cover {
+    max-width: 100%;
+}
+
+.resume {
+    font-size: 1.4rem;
+}
+.form label.error {
+    float: left;
+    margin: 0;
+    color: red;
+    z-index: 100;
+    margin-bottom: 1rem;
+}

@@ -3,12 +3,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-//Header tamplate
+//Header template
+
 require_once "template/header.php";
 
 require_once "functions.php";
 
-$base_url="http://".$_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"].'?').'/';
+$base_url="https://devweb2020.cis.strath.ac.uk/~pkb18161/ahtaewshsihtin/ass2/";
 
 $limit = 12;
 $prev = 12;

@@ -8,12 +8,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-//Header tamplate
+//Header template
+
 require_once "template/header.php";
 
 require_once "functions.php";
 
-$base_url="http://".$_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"].'?').'/';
+$base_url="https://devweb2020.cis.strath.ac.uk/~pkb18161/ahtaewshsihtin/ass2/";
 
 $appointments = getAppointments();
 $pass = "letMEin2020";
@@ -84,7 +85,7 @@ if(!$is_validated) {
                                 <thead>
                                 <tr>
                                     <th hidden scope="col">id</th>
-                                    <th scope="col">Costumer</th>
+                                    <th scope="col">Customer</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Phone number</th>
                                     <th scope="col">Postal Address</th>

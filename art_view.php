@@ -1,6 +1,7 @@
 <?php
 
-//Header tamplate
+//Header template
+
 require_once "template/header.php";
 
 ?>

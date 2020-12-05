@@ -3,7 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-//Header tamplate
+//Header template
+
 require_once "template/header.php";
 require_once "functions.php";
 
@@ -17,7 +18,9 @@ if (isset($_POST) && !empty($_POST)) {
 ?>
 
 <script type="text/javascript">
-    /* Fire Valaidate */
+
+    /* Fire Validate */
+
     $(document).ready(function () {
         $(".alert").hide();
         $.validator.addMethod("nourl",
@@ -45,7 +48,7 @@ if (isset($_POST) && !empty($_POST)) {
 
                 postal_address: {
                     required: true,
-                    minlength: 8
+                    minlength: 5
                 },
 
                 phone_number: {
@@ -77,9 +80,9 @@ if (isset($_POST) && !empty($_POST)) {
             return /(?=.*[!@#$%^&*()_,.?:{}|<>])/.test(value);
         });
 
-        $.validator.addMethod("zipCode", function (value, element) {
+        $.validator.addMethod("Postcode", function (value, element) {
             return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(value); // returns boolean
-        }, "Please enter a valid US zip code (use a hyphen if 9 digits).");
+        }, "Please enter a valid UK Postcode.");
 
 
         $(document).on('submit', '#formid', function (e) {
@@ -87,7 +90,7 @@ if (isset($_POST) && !empty($_POST)) {
                 e.preventDefault();
                 $(".alert").hide();
                 $(".alert-warning").show({effect: "pulsate", duration: 500});
-                $(".alert-warning > span").html("Please Correct the proplems below.");
+                $(".alert-warning > span").html("Please Correct the errors.");
                 return false
             }
         });

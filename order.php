@@ -57,7 +57,7 @@ if (isset($_POST) && !empty($_POST)) {
 
                 phone_number: {
                     required: true,
-                    phoneUS: true
+                    phoneUK: true
                 },
 
             },

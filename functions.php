@@ -5,7 +5,7 @@ require_once "database.php";
 function getArtworks($limit, $currentPage)
 {
     $connection = getConnection();
-    $stmt = $connection->prepare('select * from artwork limit ? offset ?');
+    $stmt = $connection->prepare('select *, (select TO_BASE64(b.image) as image from artwork_images b where artwork_id = a.id limit 1) as cover_image from artwork a limit ? offset ?');
     $stmt->bindParam(1, $limit, PDO::PARAM_INT);
     $stmt->bindParam(2, $currentPage, PDO::PARAM_INT);
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -46,8 +46,12 @@ function setOrder($data)
         $stmt->bindParam(4, $data['email']);
         $stmt->bindParam(5, $data['postal_address']);
         $stmt->execute();
+        return true;
+
     } catch (Exception $e) {
         echo $e->getMessage();
+        return false;
+
     }
 }
 

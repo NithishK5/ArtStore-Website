@@ -25,22 +25,24 @@ $base_url="https://devweb2020.cis.strath.ac.uk/~pkb18161/ahtaewshsihtin/ass2/";
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 no-gutter">
-            <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="col-12 no-gutter px-0">
+            <nav class="navbar navbar-expand-lg navbar-dark custom-header">
                 <a class="navbar-brand" href="<?php echo($base_url); ?>index.php">Cara art</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?php echo($base_url); ?>index.php">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo($base_url); ?>art_list.php?page=0">Art List</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo($base_url); ?>appointment.php">Appointment</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<?php echo($base_url); ?>index.php">Home <span class="sr-only">(current)</span></a>
+                                <a class="dropdown-item" href="<?php echo($base_url); ?>art_list.php?page=0">Art List</a>
+                                <a class="dropdown-item" href="<?php echo($base_url); ?>appointment.php">Appointment</a>
+
+                            </div>
                         </li>
                     </ul>
                     <a  class="navbar-brand" href="<?php echo($base_url); ?>admin.php">Admin</a>

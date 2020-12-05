@@ -12,3 +12,24 @@
     z-index: 100;
     margin-bottom: 1rem;
 }
+
+body {
+    background-color:honeydew ;
+    font-size: 1.3rem;
+}
+
+.custom-header {
+    background-color: darkslategrey !important;
+}
+
+.img-slide {
+    max-height: 600px;
+}
+
+.navbar-brand {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+}

@@ -10,10 +10,14 @@ require_once "functions.php";
 
 $id = $_GET['id'];
 $name = $_GET['name'];
+$msg = "";
 
 if (isset($_POST) && !empty($_POST)) {
-    setOrder($_POST);
-
+    if (setOrder($_POST)) {
+        $msg = "Order Successfully Placed!";
+    } else {
+        $msg = "Order Failed!";
+    }
 }
 ?>
 
@@ -22,7 +26,7 @@ if (isset($_POST) && !empty($_POST)) {
     /* Fire Validate */
 
     $(document).ready(function () {
-        $(".alert").hide();
+        // $(".alert").hide();
         $.validator.addMethod("nourl",
             function (value, element) {
                 return !/http\:\/\/|www\.|link\=|url\=/.test(value);
@@ -88,9 +92,6 @@ if (isset($_POST) && !empty($_POST)) {
         $(document).on('submit', '#formid', function (e) {
             if (jQuery("#formid").valid() == false) {
                 e.preventDefault();
-                $(".alert").hide();
-                $(".alert-warning").show({effect: "pulsate", duration: 500});
-                $(".alert-warning > span").html("Please Correct the errors.");
                 return false
             }
         });
@@ -103,6 +104,14 @@ if (isset($_POST) && !empty($_POST)) {
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-6 mt-3">
+
+                <?php if(!empty($msg)): ?>
+                    <div class="alert alert-info" role="alert">
+                        <?php echo $msg ?>
+                        <button type="button" class="close" data-dismiss="alert" onclick="$('.alert').hide();">&times;
+                        </button>
+                    </div>
+                <?php endif; ?>
                 <div class="card shadow">
                     <div class="card-body">
                         <h4 class="card-title">Set order </h4>

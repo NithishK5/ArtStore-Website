@@ -14,12 +14,14 @@
 }
 
 body {
-    background-color:honeydew ;
+    background-color:peachpuff ;
     font-size: 1.3rem;
 }
 
 .custom-header {
-    background-color: darkslategrey !important;
+    background-color: lightcoral !important;
+    font-style: italic;
+    font-size: x-large;
 }
 
 .img-slide {
@@ -30,6 +32,6 @@ body {
     min-height: 70px;
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: xx-large;
 
 }
